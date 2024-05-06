@@ -6,7 +6,7 @@ function One()
         console.log(`Your name is ${this.name}`)
         return 'Your roll no is ' + this.rollNo
     }
-
 }
 
 var obj = new One()
+console.log(obj)

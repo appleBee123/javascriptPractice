@@ -1,10 +1,13 @@
-//  console.log( ( (a,b) => ([a%2 == 0, b%2 == 0]) ) (10,13) )
+function One()
+{
+    var myObj = {}
+    myObj.name = "Sam",
+    myObj.rollNo = 234,
+    myObj.details = function(){
+        console.log(`Your name is ${this.name}`)
+        return 'Your rollno is ' + this.rollNo
+    }
+    return myObj
+}
 
-//   console.log( ( (a) => ([a%2 == 0]) ) (10) )
-
-//   console.log( ( (a) => (a+a) ) (5) )
-
-
- console.log( ( () => ("hello")) () )
-
-// console.log( () => { "hello"} )
+console.log(One().details())
