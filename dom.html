@@ -5,7 +5,12 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="p" class="p">Parag<span>sldkfjlskdf</span>raph</p>
+    <p id="p" aria-label="hi" class="p">Parag<span>sldkfjlskdf</span>raph</p>
+    <ol class="p" start="3">
+        <li>milk</li>
+        <li>bread</li>
+        <li>butter</li>
+    </ol>
     <!-- <p class="pClass">Parag<span>sldkfjlskdf</span>raph</p> -->
     <!-- <button onclick="myFun()">Click Me</button> -->
     <script>
@@ -13,8 +18,9 @@
             // console.log(document.getElementById("p").innerHTML)
             // document.getElementById("p").style.color = "blue"
 
-             document.getElementsByClassName("p").style.border = "2px solid black"   // didn't work :(
-                
+            var l = document.getElementsByClassName("p")[1].children
+            console.log(l)
+             l[0].style.border = "2px solid black"   
         function myFun()
         {
             // console.log(document.getElementById("p").innerText = "Hello")

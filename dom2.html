@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, molestiae.</p>
+    <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, molestiae.</p>
+    <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, molestiae.</p>
+    
+    <script>
+        var l = document.getElementsByClassName("p")
+        console.log(l)
+        // l[0].style.color = "blue"
+        for(i=0; i<l.length; i++)
+        {
+            l[i].style.color = "blue"
+        }
+    </script>
+</body>
+</html>

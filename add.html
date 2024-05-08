@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        flag = 0
+
+        do
+        {
+            a = parseInt(window.prompt("Enter first no."))
+            
+            if(a<0)
+            {
+                window.alert("Enter first no. again. it should be a positive no.")
+                flag = 0
+            }
+            else{
+                flag = 1
+            }
+        }while(flag==0)
+        
+        // now flag = 1
+        
+        do
+        {
+            b = parseInt(window.prompt("Enter second no."))
+            
+            if(b<0)
+            {
+                window.alert("Enter second no. again. it should be a positive no.")
+                flag = 0
+            }
+            else{
+                flag = 1
+            }
+        }while(flag==0)
+
+        document.write(a+b)
+
+        
+    
+        
+    </script>
+</body>
+</html>
