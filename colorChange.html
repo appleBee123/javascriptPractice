@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = ["linear-gradient(#e66465, #9198e5)","linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%)","blue",
+        "yellow","brown","orange","aqua","cadetblue"]
+        i=0
+        document.body.style.transition = "all 2s" // can write just background color too if u only wanna change that
+        function demo()
+        {
+
+                document.body.style.background = a[i]
+                i++
+            
+                if(i==8)
+                {
+                    i=0
+                }
+            
+        }
+        setInterval(demo,1000)
+    </script>
+</body>
+</html>

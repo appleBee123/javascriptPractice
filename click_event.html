@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            height: 200px;
+            border: 2px solid black;
+            background-color: aqua;
+
+
+        }
+    </style>
+</head>
+<body>
+    <!-- click, dblclick, mousein, mouseout, mouvermove, keypress, keyup-->
+    <div id="div">
+        <h1>Heading</h1>
+    </div>
+    <script>
+        document.getElementById("div").addEventListener("click",myFun)
+        function myFun()
+        {
+            document.getElementById("div").style.backgroundColor = "red"
+        }
+        </script>
+</body>
+</html>

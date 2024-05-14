@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src="images/background2.jpg" width="300px" height="300px" alt="bunnies" attribute="background"
+     title="background 2">
+    <button onclick="demo()">click me</button>
+    <script>
+        // console.log(document.getElementById("image").attributes)
+        // console.log(document.getElementById("image").attributes[4])
+        // console.log(document.getElementById("image").attributes[4].value)
+        // console.log(document.getElementById("image").attributes[4].name)
+        // console.log(document.getElementById("image").getAttribute("height"))
+
+        function demo()
+        {
+            // document.getElementById("image").setAttribute("height","600px")
+            // document.getElementById("image").setAttribute("width","600px")
+            // x = document.getElementById("image").hasAttribute("height")
+            // console.log(x)
+
+            // document.getElementById("image").removeAttribute("title")
+
+            console.log(document.getElementById("image").attributes.length)
+        }
+        
+        
+    </script>
+</body>
+</html>

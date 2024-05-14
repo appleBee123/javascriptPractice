@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quisquam!</p>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quisquam!</p>
+    <p class="pq">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quisquam!</p>
+    <p class="pq">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quisquam!</p>
+    <p class="pq">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quisquam!</p>
+    <button onclick="demo()">click me</button>
+    <script>
+        function demo()
+        {
+            // var a = document.getElementsByClassName("pq")
+            // var a = document.querySelector("#p1").style.border = "2px solid black"
+            // var a = document.querySelector(".pq").style.border = "2px solid black"
+            // var a = document.querySelectorAll("#p1")
+            var a = document.querySelectorAll(".pq")
+            for(i=0; i < a.length; i++)
+            {
+                a[i].style.border = "2px solid black"
+            }
+        }
+    </script>
+</body>
+</html>
