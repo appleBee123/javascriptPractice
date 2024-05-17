@@ -9,18 +9,24 @@
             height: 200px;
             border: 2px solid black;
             background-color: aqua;
-
-
         }
     </style>
 </head>
-<body>
-    <!-- click, dblclick, mousein, mouseout, mouvermove, keypress, keyup-->
+<body id="bd">
+    <!-- click, dblclick, mouseenter, mouseout, mousemove, keypress, keyup-->
     <div id="div">
         <h1>Heading</h1>
     </div>
+    <input id="in" type="text">
     <script>
-        document.getElementById("div").addEventListener("click",myFun)
+        // document.getElementById("div").addEventListener("click",myFun)
+        // document.getElementById("div").addEventListener("dblclick",myFun)
+
+        // document.getElementById("div").addEventListener("mouseout",myFun)
+        // document.getElementById("div").addEventListener("mousemove",myFun)
+        
+        // document.getElementById("div").addEventListener("keypress",myFun)    
+        document.getElementById("div").addEventListener("mouseenter",myFun)          
         function myFun()
         {
             document.getElementById("div").style.backgroundColor = "red"

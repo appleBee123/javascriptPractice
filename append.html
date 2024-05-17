@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dd">
+        <p>1Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, animi.</p>
+        <p>2Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, animi.</p>
+        <p id="p3">3Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, animi.</p>
+        <p>4Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, animi.</p>
+        <p>5Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, animi.</p>
+    </div>
+
+    <script>
+        // a = document.createElement("p")
+        // document.getElementById("dd").appendChild(a)
+        // a.innerHTML = "hi"  
+        
+        a = document.createElement("p")
+        a.innerHTML = "hi"  
+        p3 = document.getElementById("p3")
+        document.getElementById("dd").insertBefore(a,p3)
+    </script>
+</body>
+</html>

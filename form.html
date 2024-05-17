@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #d1 {
+            display: flex;
+            /* flex-direction: row; */
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+
+        #d2 {
+            height: 100px;
+            width: 100px;
+            border: 2px solid red;
+            visibility: hidden
+        }
+
+        .div2 {
+            margin: 10%
+        }
+    </style>
 </head>
+
 <body>
-    <input id="name" placeholder="Enter your name">
-    <input placeholder="Enter password">
-    <input placeholder="Confirm password">
-    <button>Submit</button>
+    <div id="d1">
+
+        <div class="div2">
+            <input placeholder="Enter your first name">
+            <br><br>
+            <input id="lname" placeholder="Enter your last name">
+            <br><br>
+            <input placeholder="Enter password">
+            <br><br>
+            <input placeholder="Confirm password">
+            <br><br>
+            <button onclick="show()">Submit</button>
+        </div>
+
+        <div class="div2" id="d2"></div>
+    </div>
+    <script>
+
+        counter = 10
+        document.getElementById("lname").focus()
+
+        function show() { 
+            // document.getElementById("d2").style.visibility = "visible"
+            document.getElementById("d2").style.display = "inline"
+            alert('hi')
+            cl = setInterval(timer, 1000 * 1)
+            // document.getElementById("d2").style.visibility = "hidden"
+            document.getElementById("d2").style.visibility = "hidden"
+        }
+
+        function timer()
+         {
+            document.getElementById("d2").innerHTML = counter--
+            if(counter == -1)
+            {
+                clearInterval(cl)
+            }
+        }
+    </script>
 </body>
+
 </html>
