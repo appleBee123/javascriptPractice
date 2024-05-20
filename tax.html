@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Price:</label><input id="p" type="text"> 
+    <br><br>
+    <label>Tax:</label><input id="t" type="text">
+    <br><br>
+    <label>Calculate:</label>
+    <br><br>
+    <label>Net Price:</label>
+    <input id="n" type="text">
+
+    <script>
+        setTimeout(()=>{price = document.getElementById("p").value
+        tax = document.getElementById("t").value
+        total = price + tax
+        document.getElementById("n").value = total},5000)
+    </script>
+</body>
+</html>

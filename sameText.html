@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a" placeholder="type here" >
+    <br><br>
+    <input type="text" id="b">
+
+    <script>
+        // document.getElementById("a").addEventListener(demo = () => {
+        //     inputText = document.getElementById("a").value
+        // })
+
+        document.getElementById("a").addEventListener("keypress",demo2)
+        function demo2(e)
+        {
+            e.preventDefault()
+            console.log(e.which)
+            
+            var val1 = document.getElementById("a").value
+            document.getElementById("b").value = val1
+        }
+       
+    </script>
+</body>
+</html>

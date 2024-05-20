@@ -8,16 +8,13 @@
     <style>
         #d1 {
             display: flex;
-            /* flex-direction: row; */
-            /* justify-content: center; */
-            /* align-items: center; */
         }
 
         #d2 {
             height: 100px;
             width: 100px;
             border: 2px solid red;
-            visibility: hidden
+            visibility: hidden;
         }
 
         .div2 {
@@ -49,20 +46,19 @@
         document.getElementById("lname").focus()
 
         function show() { 
-            // document.getElementById("d2").style.visibility = "visible"
-            document.getElementById("d2").style.display = "inline"
-            alert('hi')
+            document.getElementById("d2").style.visibility = "visible"
+        
             cl = setInterval(timer, 1000 * 1)
-            // document.getElementById("d2").style.visibility = "hidden"
-            document.getElementById("d2").style.visibility = "hidden"
+            
         }
 
         function timer()
          {
             document.getElementById("d2").innerHTML = counter--
-            if(counter == -1)
+            if(counter == -2)
             {
                 clearInterval(cl)
+                document.getElementById("d2").style.visibility = "hidden"
             }
         }
     </script>
