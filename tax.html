@@ -16,8 +16,8 @@
     <input id="n" type="text">
 
     <script>
-        setTimeout(()=>{price = document.getElementById("p").value
-        tax = document.getElementById("t").value
+        setTimeout(()=>{price = Number(document.getElementById("p").value)
+        tax = Number(document.getElementById("t").value)
         total = price + tax
         document.getElementById("n").value = total},5000)
     </script>

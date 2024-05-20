@@ -11,14 +11,14 @@
     <input type="text" id="b">
 
     <script>
-        // document.getElementById("a").addEventListener(demo = () => {
-        //     inputText = document.getElementById("a").value
-        // })
+       
 
-        document.getElementById("a").addEventListener("keypress",demo2)
+        document.getElementById("a").addEventListener("keypress",demo2) 
+        // try with keydown and keyup too
+
         function demo2(e)
         {
-            e.preventDefault()
+            // e.preventDefault() 
             console.log(e.which)
             
             var val1 = document.getElementById("a").value

@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h3 id="xc">X Co ordinates: </h3>
-    <h3 id="yc">Y Co ordinates: </h3>
+<body onclick="demo()">
+    <h3>X Co ordinates: </h3> <label id="xc"></label>
+    <br><br>
+    <h3>Y Co ordinates: </h3> <label id="yc"></label>
     <script>
+       function demo()
+       {
         x = event.pageX
         y = event.pageY
-        document.getElementById()
+        document.getElementById("xc").innerHTML = x
+        document.getElementById("yc").innerHTML = y
+       }
     </script>
 </body>
 </html>
