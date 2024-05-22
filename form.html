@@ -23,7 +23,7 @@
     </style>
 </head>
 
-<body>
+<body onload="show()">
     <div id="d1">
 
         <div class="div2">
@@ -35,7 +35,7 @@
             <br><br>
             <input placeholder="Confirm password">
             <br><br>
-            <button onclick="show()">Submit</button>
+            <button onclick="newpage()">Submit</button>
         </div>
 
         <div class="div2" id="d2"></div>
@@ -59,7 +59,13 @@
             {
                 clearInterval(cl)
                 document.getElementById("d2").style.visibility = "hidden"
+                window.open("https://www.w3schools.com");
             }
+        }
+
+        function newpage()
+        {
+            window.open("https://www.w3schools.com");
         }
     </script>
 </body>

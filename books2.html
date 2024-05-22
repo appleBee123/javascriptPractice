@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dd{
+            display:flex;
+            justify-content: center;
+        }
+
+        .book{
+            cursor:pointer;
+            margin: 50px;
+            padding: 1%;
+            /* border: 4px dotted red;
+            border: none */
+        }
+
+        .demo{
+            border: 4px dotted red
+        }
+    </style>
+</head>
+<body>
+    <div id="dd">
+        <div class="book" id="b1" onclick="setAttribute()">
+            <img src="images/book1.webp" height="220px" width="150px">
+        </div>
+        <div class="book" id="b2" onclick="selected('b2')">
+            <img src="images/book2.webp" height="220px" width="150px">
+        </div>
+        <div class="book" id="b3" onclick="selected('b3')">
+            <img src="images/book3.jpg" height="220px" width="150px">
+        </div>
+        <div class="book" id="b4" onclick="selected('b4')">
+            <img src="images/book4.jpg" height="220px" width="150px">
+        </div>
+        <div class="book" id="b5" onclick="selected('b5')">
+            <img src="images/book5.webp" height="220px" width="150px">
+        </div>
+        
+    </div>
+
+    <script>
+        var book1 = {
+            flag: 0          // 0 -> not selected        1 -> selected
+        }
+        
+        var book2 = {
+            flag: 0
+        }
+        var book3 = {
+            flag: 0
+        }
+        var book4 = {
+            flag: 0
+        }
+        var book5 = {
+            flag: 0
+        }
+
+        function demo(id)
+        {
+            // alert(id)
+            
+            if(this.flag == 0)
+            {
+                document.getElementById(id).style.border = "4px dotted red"
+                this.flag=1
+            }
+            else
+            {
+                // document.getElementById(id).style.border = "none"
+                document.getElementById(id).style.border = "4px dotted blue"
+                this.flag=0
+            }
+        }
+
+        function selected(id)
+        { 
+            switch(id){
+                
+                case b1: 
+                alert(id)
+                demo.call(book1,id)
+                break
+
+                case b2: demo.call(book2,id)
+                break
+
+                case b3: demo.call(book3,id)
+                break
+
+                case b4: demo.call(book4,id)
+                break
+
+                case b5: demo.call(book5,id)
+                break
+            }
+        }
+
+    </script>
+</body>
+</html>

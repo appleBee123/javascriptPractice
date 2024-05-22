@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            border: 2px solid black;
+            height: 400px;
+            width: 100%;
+            position: relative
+        }
+    </style>
 </head>
-<body onclick="demo()">
-    <h3>X Co ordinates: </h3> <label id="xc"></label>
+<body>
+    <div id="d" onmousemove="demo()" onmousedown="draw()"></div>
+    <h3> Co ordinate X: </h3> <label id="xc"></label>
     <br><br>
-    <h3>Y Co ordinates: </h3> <label id="yc"></label>
+    <h3>Co ordinate Y: </h3> <label id="yc"></label>
     <script>
-       function demo()
+        var x,y
+       demo = () =>
        {
         x = event.pageX
         y = event.pageY
         document.getElementById("xc").innerHTML = x
         document.getElementById("yc").innerHTML = y
+       }
+
+       function draw()
+       {
+        a = document.createElement("div")
+        document.getElementById("d").appendChild(a)
+        a.style.borderRadius = "50%"
+        a.style.border = "2px solid red"
+        a.style.height = "5px"
+        a.style.width = "5px"
+        a.style.position = "absolute"
+        a.style.top = y+"px"
+        a.style.left = x+"px"
        }
     </script>
 </body>

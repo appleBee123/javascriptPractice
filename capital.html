@@ -12,11 +12,12 @@
         document.getElementById("a").addEventListener("keydown",demo)
         function demo(e)
         {
-            element = document.getElementById("a").value
+            element = e.which
+            // console.log(element)
             if(element>=97 && element<=122)
             {
                 e.preventDefault()
-                
+                // use which
             }
         }
     </script>

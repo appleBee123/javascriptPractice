@@ -1,0 +1,177 @@
+/* basic reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+    height: 100vh;
+    background: hsl(225, 14%, 12%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #292d34;
+  }
+
+  /* user input field */
+input.primary {
+    width: 320px;
+    border: 2px solid rgb(80, 121, 247);
+    box-shadow: 0 4px 20px rgba(80, 121, 247, 0.4);
+    color: rgb(80, 121, 247);
+    background: transparent;
+    outline: none;
+    font-size: 24px;
+    padding: 16px;
+    border-radius: 12px;
+    transition: all 0.8s ease-out;
+    opacity: 1;
+  }
+  @media (max-width: 400px) {
+    input.primary {
+      width: 220px;
+      padding: 8px;
+    }
+  }
+
+  /* tabs container */
+.input-settings {
+    width: 320px;
+    border-radius: 10px;
+    background-color: hsl(225, 14%, 17%);
+    border: 1.5px solid rgba(0, 0, 0, 0.38);
+    box-shadow: 0 8px 32px 0 hsl(225, 14%, 12%);
+    backdrop-filter: blur(40px);
+    padding: 16px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -5%);
+    opacity: 1;
+    transition: all 0.7s ease-out;
+  }
+
+  @media (max-width: 400px) {
+    .input-settings {
+      width: 220px;
+      padding: 8px;
+    }
+  }
+  
+  /* custom regular expression container */
+  .my-reg-ex-container {
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    transform: translate(-50%, -5%);
+    width: 320px;
+    transition: all 0.5s ease-out;
+  }
+
+  @media (max-width: 400px) {
+    .my-reg-ex-container {
+      width: 220px;
+    }
+  }
+
+  /* custom regular expression input */
+.my-reg-ex-container .my-reg-ex {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #f7ce51;
+    box-shadow: 0 4px 20px rgba(245, 205, 81, 0.4);
+    color: #f7ce51;
+    background: transparent;
+    outline: none;
+    font-size: 24px;
+    padding: 16px;
+    border-radius: 12px;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  @media (max-width: 400px) {
+    .my-reg-ex-container .my-reg-ex {
+      padding: 8px;
+    }
+  }
+
+  .my-reg-ex-container.active .my-reg-ex {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* tabs */
+  /* learn how to build tabs in detailed tutorial: */
+  /* http://jssecrets.com/how-to-build-sliding-tabs-javascript/ */
+  .tabs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .tabs .slider {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 33.33333%;
+    background: linear-gradient(45deg, rgb(245, 205, 81) 0%, rgb(247, 206, 81) 100%);
+    box-shadow: 0 4px 20px rgba(245, 205, 81, 0.4);
+    border-radius: 9px;
+    z-index: 0;
+    transition: all 0.3s linear;
+  }
+
+  .tabs .tab {
+    width: 50%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px 0 16px 0;
+    border-radius: 9px;
+    font-size: 16px;
+    z-index: 1;
+    position: relative;
+    color: #7c828d;
+    transition: all 0.3s linear;
+  }
+  .tabs .tab:hover {
+    color: #f7ce51;
+  }
+
+  .tabs .tab .title {
+    font-size: 16px;
+  }
+  @media (max-width: 400px) {
+    .tabs .tab .title {
+      font-size: 14px;
+    }
+  }
+  .tabs .tab.active .title {
+    font-weight: 900;
+    color: hsl(225, 14%, 12%);
+  }
+  .tabs .tab:nth-of-type(1).active ~ .slider {
+    left: 0;
+  }
+  .tabs .tab:nth-of-type(2).active ~ .slider {
+    left: 33.33333%;
+  }
+
+  .tabs .tab:nth-of-type(3).active ~ .slider {
+    left: 66.6666%;
+  }
