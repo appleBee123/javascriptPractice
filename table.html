@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Ram</td>
+                <td>MCA</td>
+            </tr>
+            <tr>
+                <td>Sham</td>
+                <td>BCA</td>
+            </tr>
+            <tr>
+                <td>Alex</td>
+                <td>BTech</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+    <br><br>
+
+    <label>Name:</label>
+    <input type="text" id="n">
+
+    <br><br>
+
+    <label>Class:</label>
+    <input type="text" id="c">
+
+    <br><br>
+
+    <button onclick="addition()">Submit</button>
+
+    <script>
+        function addition() {
+            nm = document.getElementById("n").value
+            cc = document.getElementById("c").value
+
+            table = document.getElementById("myTable") // Find a <table> element with id="myTable"
+
+            rows = table.tBodies[0].rows.length
+
+            // Create an empty <tr> element and add it to the last position of the table
+            var newRow = table.insertRow(rows+1) 
+
+            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element
+            cell1 = newRow.insertCell(0)
+            cell2 = newRow.insertCell(1)
+
+            // Add some text to the new cells
+            cell1.innerHTML = nm
+            cell2.innerHTML = cc
+        }
+    </script>
+</body>
+
+</html>

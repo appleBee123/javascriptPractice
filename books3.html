@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #dd{
+            display:flex;
+            justify-content: center;
+        }
+       
+        .book{
+            cursor:pointer;
+            margin: 50px;
+            padding: 1%;
+            position: relative
+        }
+        
+        .books{
+            border: 4px dotted red;
+
+        }
+
+        .labelPrice{
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            border: 2px solid white;
+            background-color: white
+        }
+    </style>
+</head>
+<body>
+    <div id="dd">
+        <div class="book" id="b1" title="100">
+            <img src="images/book1.webp" height="220px" width="150px">
+            <label class="labelPrice">Price: 100</label>
+        </div>
+        <div class="book" id="b2" title="200">
+            <img src="images/book2.webp" height="220px" width="150px">
+            <label class="labelPrice">Price: 200</label>
+        </div>
+        <div class="book" id="b3" title="300">
+            <img src="images/book3.jpg" height="220px" width="150px">
+            <label class="labelPrice">Price: 300</label>
+        </div>
+        <div class="book" id="b4" title="400">
+            <img src="images/book4.jpg" height="220px" width="150px">
+            <label class="labelPrice">Price: 400</label>
+        </div>
+        <div class="book" id="b5" title="500">
+            <img src="images/book5.webp" height="220px" width="150px">
+            <label class="labelPrice">Price: 500</label>
+        </div>
+        
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <br><br>
+
+    <label>Total Price:</label><labek id="totalPrice"></label>
+
+        <div></div>
+
+    <script>
+        c = document.getElementsByClassName("book")
+        for(i=0; i<c.length; i++)
+        {
+            c[i].addEventListener("click",demo)
+        }
+        
+
+        function demo(e)
+        {
+            if(e.target.hasAttribute("class"))
+            {
+                e.target.removeAttribute("class")
+            }
+            else{
+
+                e.target.setAttribute("class","books")
+                alert(e.target.title)
+            }
+        }
+
+        function calculate()
+        {
+            count = 0
+            elements = document.getElementsByClassName("book")
+            for(i=0; i<elements.length; i++)
+            {
+                if(elements[i].hasAttribute("class"))
+                {
+                    count++
+                }
+            }
+            // alert(count)
+        }
+    </script>
+</body>
+</html>

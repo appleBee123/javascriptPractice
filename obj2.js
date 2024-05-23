@@ -1,7 +1,7 @@
 var person = {
 
     age: 33,
-    dob: "4 feb 1991",
+    dob: "4 feb 1991"
 }
 
 function bday(a,b,c)
@@ -15,6 +15,5 @@ function bday(a,b,c)
 // console.log(bday.apply(person,[5,9,8]))
 
 var x = bday.bind(person)
-
 
 console.log(x(22))
