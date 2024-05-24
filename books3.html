@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
     <style>
          #dd{
             display:flex;
@@ -33,24 +34,24 @@
 </head>
 <body>
     <div id="dd">
-        <div class="book" id="b1" title="100">
-            <img src="images/book1.webp" height="220px" width="150px">
+        <div class="book" id="b1" >
+            <img src="images/book1.webp" height="220px" width="150px" id="100" title="A Million to One">
             <label class="labelPrice">Price: 100</label>
         </div>
-        <div class="book" id="b2" title="200">
-            <img src="images/book2.webp" height="220px" width="150px">
+        <div class="book" id="b2">
+            <img src="images/book2.webp" height="220px" width="150px" id="200" title="Alone">
             <label class="labelPrice">Price: 200</label>
         </div>
-        <div class="book" id="b3" title="300">
-            <img src="images/book3.jpg" height="220px" width="150px">
+        <div class="book" id="b3">
+            <img src="images/book3.jpg" height="220px" width="150px" id="300" title="The Book of Art">
             <label class="labelPrice">Price: 300</label>
         </div>
-        <div class="book" id="b4" title="400">
-            <img src="images/book4.jpg" height="220px" width="150px">
+        <div class="book" id="b4">
+            <img src="images/book4.jpg" height="220px" width="150px" id="400" title="Harry Potter and the Cursed Child">
             <label class="labelPrice">Price: 400</label>
         </div>
-        <div class="book" id="b5" title="500">
-            <img src="images/book5.webp" height="220px" width="150px">
+        <div class="book" id="b5">
+            <img src="images/book5.webp" height="220px" width="150px" id="500" title="Hide and Seek">
             <label class="labelPrice">Price: 500</label>
         </div>
         
@@ -59,12 +60,27 @@
     <button onclick="calculate()">Calculate</button>
 
     <br><br>
+    
+    <label>Total Price:</label><label id="totalPrice"></label>
+    
+    <br><br>
 
-    <label>Total Price:</label><labek id="totalPrice"></label>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Price</th>
+            </tr>
+        </thead>
 
-        <div></div>
+        <tbody>
+
+        </tbody>
+    </table>
 
     <script>
+        sum = 0
+        bookArray = [], priceArray = []
         c = document.getElementsByClassName("book")
         for(i=0; i<c.length; i++)
         {
@@ -77,26 +93,45 @@
             if(e.target.hasAttribute("class"))
             {
                 e.target.removeAttribute("class")
+                if(sum != 0)
+                {
+                    sum -= Number(e.target.id)
+                }
             }
             else{
 
                 e.target.setAttribute("class","books")
-                alert(e.target.title)
+                // alert(e.target.id)                            // image is the target. image is being clicked
+                price = e.target.id
+                sum += Number(price)
+
+                bookname = e.target.title
+                bookArray.push({bookname, price})
+            
+                console.log({bookname,price})
+                
             }
         }
 
         function calculate()
         {
-            count = 0
-            elements = document.getElementsByClassName("book")
-            for(i=0; i<elements.length; i++)
-            {
-                if(elements[i].hasAttribute("class"))
-                {
-                    count++
-                }
-            }
-            // alert(count)
+            $("#totalPrice").html(` ${sum} Rupees`)
+
+            bookArray.forEach(element => {
+                // console.log(this.bookname,this.price)
+
+                table = document.getElementById("myTable")
+
+                rows = table.tBodies[0].rows.length
+
+                var newRow = table.insertRow(rows+1)
+
+                cell1 = newRow.insertCell(0)
+                cell2 = newRow.insertCell(1)
+
+                cell1.innerHTML = bookname
+                cell2.innerHTML = price
+            });
         }
     </script>
 </body>

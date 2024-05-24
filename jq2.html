@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="dd">
+        <p>para 1</p>
+        <p class="pClass" id="p2">para 2</p>
+        <p class="pClass">para 3</p>
+        <p>para 4</p>
+    </div>
+<button onclick="demo()">Click me</button>
+    <script>
+        function demo()
+        {
+            // $("#p2").before("<p>new para</p>")
+            // $("#p2").prepend("<p>new para</p>")         // before and prepend seem to be same
+            // $("#dd").append("<p>new para</p>")
+            // $("#p2").insertAfter("#dd")
+
+            // $("#p2").empty()
+            // $("#p2").remove()    // removes whole tag
+
+            // $("#p2").replaceWith("<h2>hello</h2>")
+
+            // $("#p2").wrap('<div style="border: 2px solid red"></div>')      
+            // $(".pClass").wrap('<div style="border: 2px solid red"></div>')      
+            $(".pClass").wrapAll('<div style="border: 2px solid red"></div>')  
+        }
+    </script>
+</body>
+</html>
