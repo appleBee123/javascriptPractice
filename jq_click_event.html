@@ -13,8 +13,27 @@
     <!-- <button id="btn">Click me</button> -->
     <!-- <input type="submit" id="btn" value="input type button"> -->
 
-    <!-- <input type="text" id="#txt1"> -->
+    <input type="text" id="txt1" value="this is text">
+    <input type="text" id="txt2" >
 
+    <!-- <button id="btn1">Show</button> -->
+    <!-- <button id="btn2">Hide</button> -->
+
+    <input type="radio" id="rb1" name="radiob">
+    <input type="radio" id="rb2" name="radiob">
+
+    <input id="chk" type="checkbox"  name="checki">
+    <input type="checkbox" id="chk2" name="checki2">
+
+    <input type="radio" name="radioGroup" id="radio1">
+    <label for="radio1">Option 1</label>
+    
+    <input type="radio" name="radioGroup" id="radio2">
+    <label for="radio2">Option 2</label>
+
+    <button onclick="myFun()">click me</button>
+
+    <button id="button1">Button</button>
     <script>
 
         // $("#btn").click(function()
@@ -42,7 +61,69 @@
         //     console.log(event.pageX + ", " + event.pageY)
         // })
 
-        $("#txt1").
+
+
+        // $("#btn1").click(function(){
+        //     $("#txt1").show()
+        // }),
+
+        // $("#btn2").click(function(){
+        //     $("#txt1").hide()
+        // })
+
+
+    //    $("#txt1").keyup(function(){
+    //     var a = $("#txt1").val()
+    //     $("#txt2").val(a)
+    //    })
+
+    // $("#txt1").keypress(function(event){
+    //     alert('hi')
+    // })
+
+    // $("input[name='checki']").change(function(){
+    //     if($("#chk2").prop("checked"))
+    //     // if($("#chk2"):("checked"))
+    //     {
+    //         alert("hi")
+    //     }
+    //     else{
+    //         alert('not working')
+    //     }
+    // })
+
+    // function myFun()
+    // {
+    //     var val1 = document.getElementById("chk")
+    // }
+
+
+//   $("input[name='radioGroup']").change(function() {
+//     var selectedRadio = $("input[name='radioGroup']:checked");
+//     if (selectedRadio.length > 0) {
+//       alert("Selected radio option: " + selectedRadio.val());
+//     } else {
+//       alert("No radio option selected");
+//     }
+//   });
+
+
+//   $(window).on("cut copy paste",window,function(){
+//     event.preventDefault()
+//     console.log("cut copy paste at " + new Date().toLocaleTimeString())
+//   })
+
+//   $(window).on(" copy paste",window,function(){
+//     event.preventDefault()
+//     console.log("cut copy paste at " + new Date().toLocaleTimeString())
+//   })
+
+  $(window).on("cut paste",window,function(){
+    event.preventDefault()
+    console.log("cut copy paste at " + new Date().toLocaleTimeString())
+  })
+
+
         </script>
 </body>
 

@@ -106,9 +106,17 @@
                 sum += Number(price)
 
                 bookname = e.target.title
-                bookArray.push({bookname, price})
+                console.log(bookname)
+                // bookArray.push(...{bookname, price})
+                bookArray.push(JSON.parse(JSON.stringify([bookname,price])))
+                // bookArray.push({bookName: bookname,Price: price})
+
+                //  let customObject = {}
+                //  customObject = {bookname,price}
+
+                // bookArray.push(...[bookname,price])
             
-                console.log({bookname,price})
+                 console.log([bookname,price])
                 
             }
         }

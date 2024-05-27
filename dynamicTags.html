@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input type="submit">
+    <div id="div1"></div>
+
+    <script>
+        // $("input").click(function(){
+        //     alert('hi')
+        //     $("#div1").html('<input type="button" value="button1"><br><input type="button" value="button1" id="button1" > ')
+        // })
+        // input code doesn't work on the dynamic buttons above
+
+        $("input").click(function(){
+            $(document).on("click","input",function(){
+            alert('hi')
+            $("#div1").html('<input type="button" value="button1"><br><input type="button" value="button1" id="button1" > ')
+        })})
+        // input code works for the dynamic buttons above
+
+
+        
+    
+        
+    </script>
+</body>
+</html>

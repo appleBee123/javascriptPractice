@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input id="chk" type="checkbox" name="check1">
+    <button onclick="myFun()">Click Me</button>
+    <script>
+        function myFun()
+        {
+            // var val1 = document.getElementById("chk").checked
+            var val1 = $("#chk")
+            console.log(val1)
+            if(val1 == true)
+            {
+                alert("hi")
+            }
+        }
+    </script>
+</body>
+</html>
