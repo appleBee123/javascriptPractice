@@ -12,11 +12,14 @@
         document.getElementById("a").addEventListener("keydown",demo)
         function demo(e)
         {
-            element = e.which
+            element = e.key
+            // element = e.which
+            // element = charCodeAt(e)
             // console.log(element)
-            if(element>=97 && element<=122)
+            if(element.charCodeAt(0)>=65 && element.charCodeAt(0)<=90)
             {
-                e.preventDefault()
+                
+                 e.preventDefault()
                 // use which
             }
         }
