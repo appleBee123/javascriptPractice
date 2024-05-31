@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jquery-3.7.1.js"></script>
     <style>
-         #dd{
-            display:flex;
+        #dd {
+            display: flex;
             justify-content: center;
         }
-       
-        .book{
-            cursor:pointer;
+
+        .book {
+            cursor: pointer;
             margin: 50px;
             padding: 1%;
             position: relative
         }
-        
-        .books{
+
+        .books {
             border: 4px dotted red;
 
         }
 
-        .labelPrice{
+        .labelPrice {
             position: absolute;
             bottom: 10%;
             left: 10%;
@@ -32,9 +33,10 @@
         }
     </style>
 </head>
+
 <body>
     <div id="dd">
-        <div class="book" id="b1" >
+        <div class="book" id="b1">
             <img src="images/book1.webp" height="220px" width="150px" id="100" title="A Million to One">
             <label class="labelPrice">Price: 100</label>
         </div>
@@ -54,15 +56,15 @@
             <img src="images/book5.webp" height="220px" width="150px" id="500" title="Hide and Seek">
             <label class="labelPrice">Price: 500</label>
         </div>
-        
+
     </div>
 
     <button onclick="calculate()">Calculate</button>
 
     <br><br>
-    
+
     <label>Total Price:</label><label id="totalPrice"></label>
-    
+
     <br><br>
 
     <table id="myTable">
@@ -82,65 +84,88 @@
         sum = 0
         bookArray = [], priceArray = []
         c = document.getElementsByClassName("book")
-        for(i=0; i<c.length; i++)
-        {
-            c[i].addEventListener("click",demo)
+        for (i = 0; i < c.length; i++) {
+            c[i].addEventListener("click", demo)
         }
-        
 
-        function demo(e)
-        {
-            if(e.target.hasAttribute("class"))
-            {
+
+        function demo(e) {
+            if (e.target.hasAttribute("class")) {
                 e.target.removeAttribute("class")
-                if(sum != 0)
-                {
+                if (sum != 0) {
                     sum -= Number(e.target.id)
                 }
             }
-            else{
+            else {
 
-                e.target.setAttribute("class","books")
+                e.target.setAttribute("class", "books")
                 // alert(e.target.id)                            // image is the target. image is being clicked
                 price = e.target.id
+
                 sum += Number(price)
-
                 bookname = e.target.title
-                console.log(bookname)
-                // bookArray.push(...{bookname, price})
-                bookArray.push(JSON.parse(JSON.stringify([bookname,price])))
-                // bookArray.push({bookName: bookname,Price: price})
 
-                //  let customObject = {}
-                //  customObject = {bookname,price}
+                console.log(bookname)
+
+                // bookArray.push(JSON.parse(JSON.stringify([bookname,sum])))
+
+                let customObject = []
+                customObject[0] = bookname
+                customObject[1] = sum
+
+                
+                var a = bookArray.flat()
+                console.log(a)
+
+                var c = a.indexOf(bookname);
+
+                if (c != -1) {
+                    console.log('element present');
+                    
+                }
+                else{ // c==-1
+
+                    bookArray.push(customObject);
+                    console.log([bookname, sum])
+                }
+
 
                 // bookArray.push(...[bookname,price])
-            
-                 console.log([bookname,price])
-                
+
+
             }
         }
 
-        function calculate()
-        {
+        function calculate() {
             $("#totalPrice").html(` ${sum} Rupees`)
 
             bookArray.forEach(element => {
-                // console.log(this.bookname,this.price)
+                // console.log(this.bookname,this.sum)
+                // alert(element)
 
-                table = document.getElementById("myTable")
+                
 
-                rows = table.tBodies[0].rows.length
+                
+                
+                    table = document.getElementById("myTable")
 
-                var newRow = table.insertRow(rows+1)
+                    rows = table.tBodies[0].rows.length
 
-                cell1 = newRow.insertCell(0)
-                cell2 = newRow.insertCell(1)
+                    var newRow = table.insertRow(rows + 1)
 
-                cell1.innerHTML = bookname
-                cell2.innerHTML = price
+                    cell1 = newRow.insertCell(0)
+                    cell2 = newRow.insertCell(1)
+
+                    cell1.innerHTML = element[0]
+                    cell2.innerHTML = element[1]
+                
+
+        
+
+
             });
         }
     </script>
 </body>
+
 </html>

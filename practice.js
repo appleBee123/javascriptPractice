@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <button id="bt" onclick="myFun()">Click Me</button>
-    <script>
-        // document.write(location.href)
-        // document.write(window.navigator.userAgent)
+bookArray = [['abc',100],
+             ['xyz',200],
+             ['pqr',300]]
 
-        function myFun()
-        {
-            console.log(window.navigator.language)
-            console.log(screenY)
+             bookArray.forEach((element, index) => {
+                // index = bookArray.indexOf(bookArray[element[0]])
+                console.log(index)
 
-        }
-        //  document.write(window.confirm("Hi"))
-        window.prompt("hi")
-
-    </script>
-</body>
-</html>
+                
+             });
