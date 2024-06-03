@@ -27,8 +27,7 @@
         .labelPrice {
             position: absolute;
             bottom: 10%;
-            left: 10%;
-            border: 2px solid white;
+            left: 10%; 
             background-color: white
         }
     </style>
@@ -67,7 +66,9 @@
 
     <br><br>
 
-    <table id="myTable">
+    <div id="table-container"></div>
+
+    <!-- <table id="myTable">
         <thead>
             <tr>
                 <th>Book</th>
@@ -78,11 +79,12 @@
         <tbody>
 
         </tbody>
-    </table>
+    </table> -->
 
     <script>
         sum = 0
-        bookArray = [], priceArray = []
+        bookArray = []
+
         c = document.getElementsByClassName("book")
         for (i = 0; i < c.length; i++) {
             c[i].addEventListener("click", demo)
@@ -98,35 +100,38 @@
             }
             else {
 
-                e.target.setAttribute("class", "books")
+                e.target.setAttribute("class", "books")          // selected images have 'books' as an attribute
                 // alert(e.target.id)                            // image is the target. image is being clicked
                 price = e.target.id
 
                 sum += Number(price)
                 bookname = e.target.title
 
-                console.log(bookname)
+                // console.log(bookname)
 
                 // bookArray.push(JSON.parse(JSON.stringify([bookname,sum])))
 
                 let customObject = []
                 customObject[0] = bookname
-                customObject[1] = sum
+                customObject[1] = price
 
-                
+
                 var a = bookArray.flat()
-                console.log(a)
+                // console.log("flat array:")
+                // console.log(a)
 
-                var c = a.indexOf(bookname);
+                var b = a.indexOf(bookname);
 
-                if (c != -1) {
+                if (b != -1) {
                     console.log('element present');
-                    
+
                 }
-                else{ // c==-1
+                else { // c==-1
 
                     bookArray.push(customObject);
-                    console.log([bookname, sum])
+                    // alert('hi')
+                    // console.log([bookname, sum]) 
+                    // console.log('book added')
                 }
 
 
@@ -139,31 +144,44 @@
         function calculate() {
             $("#totalPrice").html(` ${sum} Rupees`)
 
-            bookArray.forEach(element => {
-                // console.log(this.bookname,this.sum)
-                // alert(element)
+            table = '<table>'
+            table += '<tr><th>Book</th><th>Price</th></tr>'
 
-                
+                bookArray.forEach(element => {
 
-                
-                
-                    table = document.getElementById("myTable")
+                    table += '<tr><td>'
+                        table += element[0]
+                        table += '</td><td>'
+                            table += element[1]
+                            table += '</td></tr>'
+                            // console.log(this.bookname,this.sum)
+                            // alert(element)
+                            
+                            // table = document.createElement("Table")
+                            
+                            // rows = table.tBodies[0].rows.length
+                            
+                            
+                            
+                            
+                            
+                            //     var newRow = table.insertRow(rows + 1)
+                            
+                            //     cell1 = newRow.insertCell(0)
+                            //     cell2 = newRow.insertCell(1)
+                            
+                            //     cell1.innerHTML = element[0]
+                            //     cell2.innerHTML = element[1]
+                            
+                            
+                            
+                            
+                            
+                        });
+                        table += '</table>'
 
-                    rows = table.tBodies[0].rows.length
-
-                    var newRow = table.insertRow(rows + 1)
-
-                    cell1 = newRow.insertCell(0)
-                    cell2 = newRow.insertCell(1)
-
-                    cell1.innerHTML = element[0]
-                    cell2.innerHTML = element[1]
-                
-
-        
-
-
-            });
+                        divtable = document.getElementById('table-container')
+                        divtable.innerHTML = table
         }
     </script>
 </body>
